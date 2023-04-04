@@ -11,7 +11,7 @@ export const deleteTodo = (id: number) => ({
     payload: id,
 });
 
-export const editTodo = (id: number, description: string) => ({
+export const editTodo = (id: number, description: string, date: string) => ({
     type: ACTION_TYPES.EDIT_TODO,
-    payload: { id, description },
+    payload: { id, description, date },
 });

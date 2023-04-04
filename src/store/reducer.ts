@@ -21,7 +21,11 @@ export const reducer = (state: IState = initialState, action: AnyAction) => {
                 todos: [
                     ...state.todos.map((todo) => {
                         if (todo.id === action.payload.id) {
-                            return { ...todo, description: action.payload.description };
+                            return {
+                                ...todo,
+                                description: action.payload.description,
+                                date: action.payload.date,
+                            };
                         }
                         return todo;
                     }),

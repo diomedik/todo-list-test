@@ -21,7 +21,14 @@ export const CreateTodo = () => {
 
     const saveTodo = () => {
         if (description.trim() !== '') {
-            dispatch(addTodo({ id: generateId(), description, date: new Date().toDateString() }));
+            const date = new Date().toISOString().slice(0, 10);
+            dispatch(
+                addTodo({
+                    id: generateId(),
+                    description,
+                    date,
+                }),
+            );
             setDescription('');
             setIsEmpty(false);
         } else {

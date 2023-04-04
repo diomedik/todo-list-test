@@ -11,14 +11,14 @@ export const TodoItem = (props: ITodo) => {
     const [isEdit, setIsEdit] = React.useState<boolean>(false);
     const [description, setDescription] = React.useState<string>(props.description);
     const [date, setDate] = React.useState<string>(props.date);
-    const handleDelete = () => dispatch(deleteTodo(props.id));
+    const handleDeleteTodo = () => dispatch(deleteTodo(props.id));
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    const handleChangeDescription = (event: React.ChangeEvent<HTMLInputElement>) =>
         setDescription(event.target.value);
 
     const handleChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => setDate(e.target.value);
 
-    const handleEdit = () => {
+    const handleEditTodo = () => {
         setIsEdit(!isEdit);
         if (isEdit) {
             dispatch(editTodo(props.id, description, date));
@@ -38,13 +38,13 @@ export const TodoItem = (props: ITodo) => {
                 className="input todo-item-description"
                 value={description}
                 disabled={!isEdit}
-                onChange={handleChange}
+                onChange={handleChangeDescription}
             />
             <div className="todo-item-buttons-container">
-                <Button className="button" onClick={handleEdit}>
+                <Button className="button" onClick={handleEditTodo}>
                     {isEdit ? 'Save' : 'Edit'}
                 </Button>
-                <Button className="button delete" onClick={handleDelete}>
+                <Button className="button delete" onClick={handleDeleteTodo}>
                     Delete
                 </Button>
             </div>

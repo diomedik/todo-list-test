@@ -8,7 +8,7 @@ export const addTodo = (todo: ITodo) => ({
 
 export const deleteTodo = (id: number) => ({
     type: ACTION_TYPES.DELETE_TODO,
-    payload: id,
+    payload: { id },
 });
 
 export const editTodo = (id: number, description: string, date: string) => ({

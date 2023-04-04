@@ -1,12 +1,17 @@
-import { AnyAction } from 'redux';
 import { IState } from './interfaces/IState';
 import { ACTION_TYPES } from './constants/actionTypes';
+import { ITodo } from '../interfaces/ITodo';
 
 const initialState: IState = {
     todos: [],
 };
 
-export const reducer = (state: IState = initialState, action: AnyAction) => {
+type Action = {
+    type: string;
+    payload: ITodo;
+};
+
+export const reducer = (state: IState = initialState, action: Action) => {
     switch (action.type) {
         case ACTION_TYPES.ADD_TODO:
             return {
@@ -14,7 +19,7 @@ export const reducer = (state: IState = initialState, action: AnyAction) => {
             };
         case ACTION_TYPES.DELETE_TODO:
             return {
-                todos: [...state.todos.filter((todo) => todo.id !== action.payload)],
+                todos: [...state.todos.filter((todo) => todo.id !== action.payload.id)],
             };
         case ACTION_TYPES.EDIT_TODO:
             return {

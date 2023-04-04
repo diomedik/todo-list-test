@@ -4,6 +4,7 @@ import { Input } from '../Input';
 import { Button } from '../Button';
 import { deleteTodo, editTodo } from '../../store/actions/actions';
 import { ITodo } from '../../interfaces/ITodo';
+import './TodoItem.css';
 
 export const TodoItem = (props: ITodo) => {
     const dispatch = useDispatch();
@@ -23,10 +24,19 @@ export const TodoItem = (props: ITodo) => {
 
     return (
         <div className="todo-item-container">
-            <Input value={props.date} disabled />
-            <Input value={description} disabled={!isEdit} onChange={handleChange} />
-            <Button onClick={handleDelete}>Delete</Button>
-            <Button onClick={handleEdit}>{isEdit ? 'Save' : 'Edit'}</Button>
+            <Input className="input todo-item-date" value={props.date} disabled />
+            <Input
+                className="input todo-item-description"
+                value={description}
+                disabled={!isEdit}
+                onChange={handleChange}
+            />
+            <Button className="button" onClick={handleEdit}>
+                {isEdit ? 'Save' : 'Edit'}
+            </Button>
+            <Button className="button delete" onClick={handleDelete}>
+                Delete
+            </Button>
         </div>
     );
 };

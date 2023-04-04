@@ -1,0 +1,27 @@
+.todo-item-container {
+    margin: 10px 0 10px;
+    display: flex;
+}
+
+.todo-item-date {
+    width: 185px;
+    border-radius: 6px 0 0 6px;
+}
+
+.todo-item-description {
+    width: 400px;
+    border-radius: 0;
+}
+
+.button {
+    width: 120px;
+    border-radius: 0;
+}
+
+.delete {
+    border-radius: 0 6px 6px 0;
+}
+
+.input.ant-input-disabled {
+    color: rgba(0, 0, 0, 0.65);
+}

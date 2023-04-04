@@ -1,0 +1,13 @@
+.create-todo-container {
+    display: flex;
+    margin: 25px auto 0;
+    width: 450px;
+}
+
+.create-todo-input {
+    border-radius: 6px 0 0 6px;
+}
+
+.create-todo-button {
+    border-radius: 0 6px 6px 0;
+}

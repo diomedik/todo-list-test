@@ -1,8 +1,9 @@
 import { ACTION_TYPES } from '../constants/actionTypes';
+import { ITodo } from '../../interfaces/ITodo';
 
-export const addTodo = (description: string) => ({
+export const addTodo = (todo: ITodo) => ({
     type: ACTION_TYPES.ADD_TODO,
-    payload: description,
+    payload: todo,
 });
 
 export const deleteTodo = (id: number) => ({

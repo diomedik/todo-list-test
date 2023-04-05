@@ -19,7 +19,9 @@ export const TodoItem = (props: ITodo) => {
     const handleChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => setDate(e.target.value);
 
     const handleEditTodo = () => {
-        setIsEdit(!isEdit);
+        if (description.trim() !== '' && date.trim() !== '') {
+            setIsEdit(!isEdit);
+        }
         if (isEdit) {
             dispatch(editTodo(props.id, description, date));
         }
@@ -39,6 +41,7 @@ export const TodoItem = (props: ITodo) => {
                 value={description}
                 disabled={!isEdit}
                 onChange={handleChangeDescription}
+                allowClear
             />
             <div className="todo-item-buttons-container">
                 <Button className="button" onClick={handleEditTodo}>

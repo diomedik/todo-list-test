@@ -4,27 +4,23 @@
 }
 
 .todo-item-date {
-    width: 215px;
+    width: 175px;
     border-radius: 6px 0 0 6px;
 }
 
 .todo-item-description {
-    width: 400px;
+    width: 450px;
     border-radius: 0;
 }
 
 .button {
-    width: 120px;
+    width: 75px;
     border-radius: 0;
     height: 100%;
 }
 
 .delete {
     border-radius: 0 6px 6px 0;
-}
-
-.input.ant-input-disabled {
-    color: rgba(0, 0, 0, 0.65);
 }
 
 .todo-item-buttons-container {

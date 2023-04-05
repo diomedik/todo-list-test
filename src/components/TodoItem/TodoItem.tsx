@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from '../Input';
 import { Button } from '../Button';
-import { deleteTodo, editTodo } from '../../store/actions/actions';
+import { deleteTodo, editTodo } from '../../store/actions';
 import { ITodo } from '../../interfaces/ITodo';
 import './TodoItem.css';
 

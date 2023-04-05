@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from '../Input';
 import { Button } from '../Button';
-import { addTodo } from '../../store/actions/actions';
+import { addTodo } from '../../store/actions';
 import { generateId } from '../../utils';
 import './CreateTodo.css';
 
